@@ -1,0 +1,15 @@
+description: >
+  Install the Claude Code CLI using npm.
+
+parameters:
+  version:
+    type: string
+    default: "latest"
+    description: "Version of Claude Code to install"
+
+steps:
+  - run:
+      name: Install Claude Code CLI
+      command: <<include(scripts/install.sh)>>
+      environment:
+        CLAUDE_VERSION: << parameters.version >>
