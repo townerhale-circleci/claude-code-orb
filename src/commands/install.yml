@@ -13,4 +13,3 @@ steps:
       command: <<include(scripts/install.sh)>>
       environment:
         CLAUDE_VERSION: << parameters.version >>
-        
