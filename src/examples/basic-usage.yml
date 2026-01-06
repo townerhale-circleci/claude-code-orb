@@ -1,0 +1,21 @@
+description: >
+  Basic example showing how to install Claude Code in a CircleCI job.
+
+usage:
+  version: 2.1
+
+  orbs:
+    claude-code: townerhale/claude-code-orb@1.0.0
+
+  jobs:
+    install-claude:
+      docker:
+        - image: cimg/node:lts
+      steps:
+        - checkout
+        - claude-code/install
+
+  workflows:
+    main:
+      jobs:
+        - install-claude
