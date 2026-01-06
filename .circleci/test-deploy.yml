@@ -28,7 +28,7 @@ jobs:
     steps:
       - checkout
       # Run your orb's commands to validate them.
-      - claude-code-orb/greet
+      - claude-code-orb/install
 workflows:
   test-deploy:
     jobs:
