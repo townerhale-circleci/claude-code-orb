@@ -8,6 +8,13 @@ if ! command -v npm &> /dev/null; then
     exit 1
 fi
 
+# Set npm global prefix to user directory (avoids permission issues)
+npm config set prefix ~/.npm-global
+export PATH=~/.npm-global/bin:$PATH
+
+# Add to BASH_ENV so subsequent steps can find claude
+echo 'export PATH=~/.npm-global/bin:$PATH' >> "$BASH_ENV"
+
 # Install Claude Code
 if [ "$CLAUDE_VERSION" = "latest" ]; then
     npm install -g @anthropic-ai/claude-code
